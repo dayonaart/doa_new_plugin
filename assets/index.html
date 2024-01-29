@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>reCAPTCHA</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+  <form action="?" method="POST">
+    <div class="g-recaptcha" data-sitekey="6Lcej-kkAAAAAFZlSfJ47b7NrZpns_7QE_t9DLsx" data-callback="captchaCallback">
+    </div>
+
+  </form>
+  <script>
+    function captchaCallback(response) {
+      //console.log(response);
+      if (typeof Captcha !== "undefined") {
+        Captcha.postMessage(true);
+      } else {
+        Captcha.postMessage(false);
+      }
+    }
+  </script>
+</body>
+
+</html>
+
+<html>
+
+<body>
+
+  <!-- <html>
+
+<head>
+  <title>reCAPTCHA demo: Explicit render after an onload callback</title>
+  <script type="text/javascript">
+    var onloadCallback = function () {
+      grecaptcha.render('html_element', {
+        'sitekey': '6Lcej-kkAAAAAFZlSfJ47b7NrZpns_7QE_t9DLsx'
+      });
+    };
+  </script>
+</head>
+
+<body>
+  <form action="?" method="POST">
+    <div id="html_element"></div>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+  </script>
+</body>
+
+</html> -->
